@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "944895688182",
+    "project_id": "alameda-c9fc6",
+    "storage_bucket": "alameda-c9fc6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944895688182:android:b268fb6b00c802a25a9bd7",
+        "android_client_info": {
+          "package_name": "com.example.ladm_u5_mapeo_turistico"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "944895688182-hvvqk2ncjj2ep7nq9ujjodgl90vsh0hf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-rqWwUaPU1jD6ecvCevHYN5vvT0GC_3I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "944895688182-hvvqk2ncjj2ep7nq9ujjodgl90vsh0hf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
