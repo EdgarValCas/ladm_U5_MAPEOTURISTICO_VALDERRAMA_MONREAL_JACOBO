@@ -12,9 +12,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
-        android:textColor="#FF0000"
-        android:textSize="16sp"
+        android:textAlignment="center"
+        android:textColor="#2E0466 "
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:fontFamily="Franklin Gothic Medium"
         android:text="TextView"/>
+
+    <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+        android:id="@+id/carousel"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center" />
 
     <Button
         android:layout_width="match_parent"
@@ -27,15 +36,17 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
         android:textColor="#0000FF"
+        android:textAlignment="center"
         android:textSize="20sp"
-        android:text="TextView"/>
+        android:text="CARGANDO TUS COORDENADAS..."/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textview3"
         android:textSize="20sp"
-        android:textColor="#C59404"
+        android:textAlignment="center"
+        android:textColor="#2E0466 "
         android:text="ESTAS EN"/>
 
 </LinearLayout>

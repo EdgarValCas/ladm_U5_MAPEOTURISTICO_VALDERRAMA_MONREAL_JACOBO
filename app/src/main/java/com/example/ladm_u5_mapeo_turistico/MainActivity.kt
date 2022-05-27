@@ -15,18 +15,24 @@ import com.example.ladm_u5_mapeo_turistico.databinding.ActivityMainBinding
 import com.google.android.gms.location.LocationServices
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.GeoPoint
+import org.imaginativeworld.whynotimagecarousel.ImageCarousel
+import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
     var baseRemota = FirebaseFirestore.getInstance()
     var posicion =ArrayList<Data>()
+    val list = mutableListOf<CarouselItem>()
+
     lateinit var locacion : LocationManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val carousel: ImageCarousel = findViewById(R.id.carousel)
 
         if(ActivityCompat.checkSelfPermission(this,
             android.Manifest.permission.ACCESS_FINE_LOCATION)==PackageManager.PERMISSION_DENIED){
@@ -55,6 +61,13 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 binding.textView.setText(resultado)
+                list.add(CarouselItem(imageDrawable = R.drawable.entrada))
+                list.add(CarouselItem(imageDrawable = R.drawable.biblio))
+                list.add(CarouselItem(imageDrawable = R.drawable.fuente))
+                list.add(CarouselItem(imageDrawable = R.drawable.deportiva))
+                list.add(CarouselItem(imageDrawable = R.drawable.aviario))
+
+                carousel.addData(list)
             }
 
         binding.button.setOnClickListener {
