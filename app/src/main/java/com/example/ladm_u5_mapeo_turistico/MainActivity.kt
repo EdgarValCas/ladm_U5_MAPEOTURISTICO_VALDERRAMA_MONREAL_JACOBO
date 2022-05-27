@@ -2,6 +2,7 @@ package com.example.ladm_u5_mapeo_turistico
 
 import android.Manifest
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationListener
@@ -57,41 +58,13 @@ class MainActivity : AppCompatActivity() {
             }
 
         binding.button.setOnClickListener {
-            //miUbicacion()
+            startActivity(Intent(this, MapsActivity::class.java))
         }
 
         locacion = getSystemService(Context.LOCATION_SERVICE) as LocationManager
         var oyente = Oyente(this)
-        locacion.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,01f, oyente)
-    }
-
-    private fun miUbicacion() {
-        if (ActivityCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_FINE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_COARSE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            return
-        }
-        LocationServices.getFusedLocationProviderClient(this)
-            .lastLocation.addOnSuccessListener {
-                var geoPosicion = GeoPoint(it.latitude,it.longitude)
-                binding.textView2.setText("${it.latitude}, ${it.longitude}")
-                for (item in posicion){
-                    if(item.estoyEn(geoPosicion)==true){
-                        AlertDialog.Builder(this)
-                            .setMessage("USTED SE ENCUENTRA EN: "+item.nombre)
-                            .setTitle("ATENCION")
-                            .setPositiveButton("OK"){p,q->}
-                            .show()
-                    }
-                }
-            }.addOnFailureListener {
-                binding.textView2.setText("ERROR AL OBTENER LA UBICACIÓN")
-            }
+        locacion.requestLocationUpdates(LocationManager.GPS_PROVIDER,
+            0,01f, oyente)
     }
 }
 

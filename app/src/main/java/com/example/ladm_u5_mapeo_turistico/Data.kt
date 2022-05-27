@@ -22,6 +22,7 @@ class Data {
                     return true
                 }
         }
+
         return false
     }
 
