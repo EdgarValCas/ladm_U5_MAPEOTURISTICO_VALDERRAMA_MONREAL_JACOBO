@@ -160,8 +160,26 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
             override fun getInfoContents(marker: Marker): View {
                 val infoWindow = layoutInflater.inflate(R.layout.custom_info_contents,
                     findViewById<FrameLayout>(R.id.map), false)
-                val imagen = infoWindow.findViewById<ImageView>(R.id.imagen)
-                imagen.drawable
+                if(marker.title == "BIBLIOTECA") {
+                    val imagen = infoWindow.findViewById<ImageView>(R.id.imagen)
+                    imagen.setImageDrawable(getResources().getDrawable(R.drawable.biblio))
+                }
+                if(marker.title == "ENTRADA ALAMEDA") {
+                    val imagen = infoWindow.findViewById<ImageView>(R.id.imagen)
+                    imagen.setImageDrawable(getResources().getDrawable(R.drawable.entrada))
+                }
+                if(marker.title == "FUENTE CENTRAL") {
+                    val imagen = infoWindow.findViewById<ImageView>(R.id.imagen)
+                    imagen.setImageDrawable(getResources().getDrawable(R.drawable.fuente))
+                }
+                if(marker.title == "ZONA DEPORTIVA") {
+                    val imagen = infoWindow.findViewById<ImageView>(R.id.imagen)
+                    imagen.setImageDrawable(getResources().getDrawable(R.drawable.deportiva))
+                }
+                if(marker.title == "AVIARIO") {
+                    val imagen = infoWindow.findViewById<ImageView>(R.id.imagen)
+                    imagen.setImageDrawable(getResources().getDrawable(R.drawable.aviario))
+                }
                 val title = infoWindow.findViewById<TextView>(R.id.title)
                 title.text = marker.title
                 val snippet = infoWindow.findViewById<TextView>(R.id.snippet)
