@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
     var baseRemota = FirebaseFirestore.getInstance()
-    var posicion =ArrayList<Data>()
+    var posicion = ArrayList<Data>()
     val list = mutableListOf<CarouselItem>()
 
     lateinit var locacion : LocationManager
@@ -76,8 +76,7 @@ class MainActivity : AppCompatActivity() {
 
         locacion = getSystemService(Context.LOCATION_SERVICE) as LocationManager
         var oyente = Oyente(this)
-        locacion.requestLocationUpdates(LocationManager.GPS_PROVIDER,
-            0,01f, oyente)
+        locacion.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,01f,oyente)
     }
 }
 
@@ -87,7 +86,7 @@ class Oyente(puntero:MainActivity) : LocationListener {
     override fun onLocationChanged(location: Location) {
         p.binding.textView2.setText("${location.latitude}, ${location.longitude}")
         p.binding.textview3.setText("")
-        var geoPosicionGPS = GeoPoint(location.latitude,location.longitude)
+        var geoPosicionGPS = GeoPoint(location.latitude, location.longitude)
 
         for (item in p.posicion){
             if(item.estoyEn(geoPosicionGPS)){
@@ -95,14 +94,4 @@ class Oyente(puntero:MainActivity) : LocationListener {
             }
         }
     }
-    override fun onStatusChanged(provider: String?, status: Int,extras: Bundle?) {
-
-    }
-    override fun onProviderEnabled(provider: String) {
-
-    }
-    override fun onProviderDisabled(provider: String) {
-
-    }
-
 }

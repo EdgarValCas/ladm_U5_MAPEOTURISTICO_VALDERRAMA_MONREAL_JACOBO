@@ -15,10 +15,10 @@ class Data {
     fun estoyEn(posicionActual:GeoPoint):Boolean{
         //logica es similar a la clase figurageometica de canvas
         //estoyEn es muy muy similar estaEnArea
-        if (posicionActual.latitude>= posicion1.latitude &&
-                posicionActual.latitude <= posicion2.latitude){
-                if(invertir(posicionActual.longitude) >= invertir(posicion1.longitude) &&
-                        invertir(posicionActual.longitude) <= invertir(posicion2.longitude)){
+        if (posicionActual.latitude <= posicion1.latitude &&
+                posicionActual.latitude >= posicion2.latitude){
+                if(invertir(posicionActual.longitude) <= invertir(posicion1.longitude) &&
+                        invertir(posicionActual.longitude) >= invertir(posicion2.longitude)){
                     return true
                 }
         }

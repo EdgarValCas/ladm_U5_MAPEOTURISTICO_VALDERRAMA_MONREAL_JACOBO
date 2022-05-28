@@ -19,6 +19,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.example.ladm_u5_mapeo_turistico.databinding.ActivityMapsBinding
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.Marker
 
 class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListener,
@@ -190,12 +191,12 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
     }
 
     override fun onMyLocationClick(location: Location) {
-        Toast.makeText(this, "Current location:\n$location", Toast.LENGTH_LONG)
+        Toast.makeText(this, "Posición Actual:\n$location", Toast.LENGTH_LONG)
             .show()
     }
 
     override fun onMyLocationButtonClick(): Boolean {
-        Toast.makeText(this, "MyLocation button clicked", Toast.LENGTH_SHORT)
+        Toast.makeText(this, "Moviendose a tu posición actual", Toast.LENGTH_SHORT)
             .show()
         // Return false so that we don't consume the event and the default behavior still occurs
         // (the camera animates to the user's current position).
